@@ -11,19 +11,34 @@ export const fetchUserData = async (username) => {
   }
 };
 
-export const searchUsers = async (query, location = '', minRepos = '') => {
+export const searchUsers = async (query = '', location = '', minRepos = '', page = 1) => {
   try {
-    let searchQuery = query;
+    let searchQuery = '';
     
-    if (location) {
-      searchQuery += `+location:${location}`;
+    if (query.trim()) {
+      searchQuery += query.trim();
     }
     
-    if (minRepos) {
-      searchQuery += `+repos:>=${minRepos}`;
+    if (location.trim()) {
+      searchQuery += (searchQuery ? '+' : '') + `location:${location.trim()}`;
     }
     
-    const response = await axios.get(`${BASE_URL}/search/users?q=${searchQuery}`);
+    if (minRepos && parseInt(minRepos) > 0) {
+      searchQuery += (searchQuery ? '+' : '') + `repos:>=${minRepos}`;
+    }
+    
+    if (!searchQuery) {
+      return { items: [], total_count: 0 };
+    }
+    
+    const response = await axios.get(`${BASE_URL}/search/users`, {
+      params: {
+        q: searchQuery,
+        page: page,
+        per_page: 30
+      }
+    });
+    
     return response.data;
   } catch (error) {
     throw error;
