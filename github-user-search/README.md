@@ -17,3 +17,4 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## About This Project
 GitHub User Search Application built with React and Vite for ALX.
+
