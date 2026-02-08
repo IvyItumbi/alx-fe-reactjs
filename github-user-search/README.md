@@ -1,20 +1,70 @@
-# React + Vite
+# GitHub User Search Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based web application for searching GitHub users using the GitHub API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Search GitHub users by username
+- Display user profile information including avatar, bio, location, and repository count
+- Responsive design with Tailwind CSS
+- Real-time loading states and error handling
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19.2.0
+- Vite 7.2.4
+- Axios 1.7.9 for API calls
+- Tailwind CSS for styling
+- GitHub REST API
 
-## Expanding the ESLint configuration
+## Installation
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Running the Application
+```bash
+npm run dev
+```
 
-## About This Project
-GitHub User Search Application built with React and Vite for ALX.
+The application will open at `http://localhost:5173`
 
+## Project Structure
+```
+github-user-search/
+├── src/
+│   ├── components/
+│   │   └── Search.jsx
+│   ├── services/
+│   │   └── githubService.js
+│   ├── App.jsx
+│   └── main.jsx
+├── public/
+├── package.json
+└── README.md
+```
+
+## Usage
+
+1. Enter a GitHub username in the search box
+2. Click "Search" button
+3. View the user's profile information including:
+   - Avatar
+   - Name and username
+   - Bio
+   - Location
+   - Number of public repositories
+   - Follower count
+   - Link to GitHub profile
+
+## API Integration
+
+Uses GitHub REST API endpoint: `https://api.github.com/users/{username}`
+
+## Author
+
+IvyItumbi - ALX Software Engineering Program
+
+## License
+
+This project is part of the ALX Frontend React specialization.
