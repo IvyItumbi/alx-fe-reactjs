@@ -34,24 +34,24 @@ const RecipeDetail = () => {
                     <div className="mb-6">
                         <h2 className="text-2xl font-semibold mb-3 text-gray-800">Ingredients</h2>
                         <ul className="list-disc list-inside text-gray-700">
-                            <li>Ingredient 1 (Mock)</li>
-                            <li>Ingredient 2 (Mock)</li>
-                            <li>Ingredient 3 (Mock)</li>
-                            <li>Ingredient 4 (Mock)</li>
+                            {recipe.ingredients && recipe.ingredients.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
                         </ul>
                     </div>
 
                     <div>
                         <h2 className="text-2xl font-semibold mb-3 text-gray-800">Instructions</h2>
                         <ol className="list-decimal list-inside text-gray-700 space-y-2">
-                            <li>Step 1 description goes here.</li>
-                            <li>Step 2 description goes here.</li>
-                            <li>Step 3 description goes here.</li>
+                            {recipe.instructions && recipe.instructions.map((step, index) => (
+                                <li key={index}>{step}</li>
+                            ))}
                         </ol>
                     </div>
                 </div>
             </div>
         </div>
+        </div >
     );
 };
 
