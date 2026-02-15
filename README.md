@@ -2,6 +2,7 @@
 
 This project demonstrates how to integrate Tailwind CSS with a React application using Vite.
 
+
 ## Project Structure
 
 - `tailwind-react-integration/`: The main React application directory.
