@@ -1,13 +1,9 @@
-import { useState } from 'react'
+import UserProfile from './components/UserProfile'
 
 function App() {
-    const [count, setCount] = useState(0)
-
     return (
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-            <h1 className="text-3xl font-bold underline">
-                Hello world!
-            </h1>
+        <div className="min-h-screen bg-gray-50">
+            <UserProfile />
         </div>
     )
 }
